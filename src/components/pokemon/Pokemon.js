@@ -187,6 +187,147 @@ export default class Pokemon extends Component {
               <div className="col-5">
                 <h5>{this.state.pokemonIndex}</h5>
               </div>
+              <div className="col-7">
+                <div className="float-right">
+                  {this.state.types.map(type => (
+                    <span
+                      key={type}
+                      className="badge badge-primary badge-pill mr-1"
+                      style={{
+                        backgroundColor: `#${TYPE_COLORS[type]}`,
+                        color: "white"
+                      }}
+                    >
+                      {type
+                        .toLowerCase()
+                        .split(" ")
+                        .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+                        .join(" ")}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="card-body">
+            <div className="row align-items-center">
+              <div className="col-md-3">
+                <img
+                  src={this.state.imageUrl}
+                  className="card-img-top rounded mx-auto mt-2"
+                />
+              </div>
+              <div className="col-md-9">
+                <h4 className="mx-auto">
+                  {this.state.name
+                    .toLowerCase()
+                    .split(" ")
+                    .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+                    .join(" ")}
+                </h4>
+                <div className="row align-items-center">
+                  <div className="col-12 col-md-3">PV</div>
+                  <div className="col-12 col-md-9">
+                    <div className="progess">
+                      <div
+                        className="progress-bar"
+                        role="progressBar"
+                        style={{ width: `${this.state.stats.hp}%` }}
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <small>{this.state.stats.hp}</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="row align-items-center">
+                  <div className="col-12 col-md-3">Attaque</div>
+                  <div className="col-12 col-md-9">
+                    <div className="progess">
+                      <div
+                        className="progress-bar"
+                        role="progressBar"
+                        style={{ width: `${this.state.stats.attack}%` }}
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <small>{this.state.stats.attack}</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="row align-items-center">
+                  <div className="col-12 col-md-3">Defense</div>
+                  <div className="col-12 col-md-9">
+                    <div className="progess">
+                      <div
+                        className="progress-bar"
+                        role="progressBar"
+                        style={{ width: `${this.state.stats.defense}%` }}
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <small>{this.state.stats.defense}</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="row align-items-center">
+                  <div className="col-12 col-md-3">Vitesse</div>
+                  <div className="col-12 col-md-9">
+                    <div className="progess">
+                      <div
+                        className="progress-bar"
+                        role="progressBar"
+                        style={{ width: `${this.state.stats.speed}%` }}
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <small>{this.state.stats.speed}</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="row align-items-center">
+                  <div className="col-12 col-md-3">Attaque Spéciale</div>
+                  <div className="col-12 col-md-9">
+                    <div className="progess">
+                      <div
+                        className="progress-bar"
+                        role="progressBar"
+                        style={{ width: `${this.state.stats.specialAttack}%` }}
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <small>{this.state.stats.specialAttack}</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="row align-items-center">
+                  <div className="col-12 col-md-3">Défense Spéciale</div>
+                  <div className="col-12 col-md-9">
+                    <div className="progess">
+                      <div
+                        className="progress-bar"
+                        role="progressBar"
+                        style={{ width: `${this.state.stats.specialDefense}%` }}
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <small>{this.state.stats.specialDefense}</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

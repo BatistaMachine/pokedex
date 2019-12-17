@@ -192,7 +192,7 @@ export default class Pokemon extends Component {
                   {this.state.types.map(type => (
                     <span
                       key={type}
-                      className="badge badge-primary badge-pill mr-1"
+                      className="badge badge-pill mr-1"
                       style={{
                         backgroundColor: `#${TYPE_COLORS[type]}`,
                         color: "white"
@@ -211,7 +211,7 @@ export default class Pokemon extends Component {
           </div>
           <div className="card-body">
             <div className="row align-items-center">
-              <div className="col-md-3">
+              <div className=" col-md-3 ">
                 <img
                   src={this.state.imageUrl}
                   className="card-img-top rounded mx-auto mt-2"
@@ -226,13 +226,18 @@ export default class Pokemon extends Component {
                     .join(" ")}
                 </h4>
                 <div className="row align-items-center">
-                  <div className="col-12 col-md-3">PV</div>
-                  <div className="col-12 col-md-9">
-                    <div className="progess">
+                  <div className={`col-12 col-md-${this.state.statTitleWidth}`}>
+                    PV
+                  </div>
+                  <div className={`col-12 col-md-${this.state.statBarWidth}`}>
+                    <div className="progress">
                       <div
-                        className="progress-bar"
-                        role="progressBar"
-                        style={{ width: `${this.state.stats.hp}%` }}
+                        className="progress-bar "
+                        role="progressbar"
+                        style={{
+                          width: `${this.state.stats.hp}%`,
+                          backgroundColor: `#${this.state.themeColor}`
+                        }}
                         aria-valuenow="25"
                         aria-valuemin="0"
                         aria-valuemax="100"
@@ -243,13 +248,18 @@ export default class Pokemon extends Component {
                   </div>
                 </div>
                 <div className="row align-items-center">
-                  <div className="col-12 col-md-3">Attaque</div>
-                  <div className="col-12 col-md-9">
-                    <div className="progess">
+                  <div className={`col-12 col-md-${this.state.statTitleWidth}`}>
+                    Attaque
+                  </div>
+                  <div className={`col-12 col-md-${this.state.statBarWidth}`}>
+                    <div className="progress">
                       <div
                         className="progress-bar"
-                        role="progressBar"
-                        style={{ width: `${this.state.stats.attack}%` }}
+                        role="progressbar"
+                        style={{
+                          width: `${this.state.stats.attack}%`,
+                          backgroundColor: `#${this.state.themeColor}`
+                        }}
                         aria-valuenow="25"
                         aria-valuemin="0"
                         aria-valuemax="100"
@@ -260,13 +270,18 @@ export default class Pokemon extends Component {
                   </div>
                 </div>
                 <div className="row align-items-center">
-                  <div className="col-12 col-md-3">Defense</div>
-                  <div className="col-12 col-md-9">
-                    <div className="progess">
+                  <div className={`col-12 col-md-${this.state.statTitleWidth}`}>
+                    Défense
+                  </div>
+                  <div className={`col-12 col-md-${this.state.statBarWidth}`}>
+                    <div className="progress">
                       <div
-                        className="progress-bar"
-                        role="progressBar"
-                        style={{ width: `${this.state.stats.defense}%` }}
+                        className="progress-bar "
+                        role="progressbar"
+                        style={{
+                          width: `${this.state.stats.defense}%`,
+                          backgroundColor: `#${this.state.themeColor}`
+                        }}
                         aria-valuenow="25"
                         aria-valuemin="0"
                         aria-valuemax="100"
@@ -277,13 +292,18 @@ export default class Pokemon extends Component {
                   </div>
                 </div>
                 <div className="row align-items-center">
-                  <div className="col-12 col-md-3">Vitesse</div>
-                  <div className="col-12 col-md-9">
-                    <div className="progess">
+                  <div className={`col-12 col-md-${this.state.statTitleWidth}`}>
+                    Vitesse
+                  </div>
+                  <div className={`col-12 col-md-${this.state.statBarWidth}`}>
+                    <div className="progress">
                       <div
                         className="progress-bar"
-                        role="progressBar"
-                        style={{ width: `${this.state.stats.speed}%` }}
+                        role="progressbar"
+                        style={{
+                          width: `${this.state.stats.speed}%`,
+                          backgroundColor: `#${this.state.themeColor}`
+                        }}
                         aria-valuenow="25"
                         aria-valuemin="0"
                         aria-valuemax="100"
@@ -294,14 +314,19 @@ export default class Pokemon extends Component {
                   </div>
                 </div>
                 <div className="row align-items-center">
-                  <div className="col-12 col-md-3">Attaque Spéciale</div>
-                  <div className="col-12 col-md-9">
-                    <div className="progess">
+                  <div className={`col-12 col-md-${this.state.statTitleWidth}`}>
+                    Attaque Spéciale
+                  </div>
+                  <div className={`col-12 col-md-${this.state.statBarWidth}`}>
+                    <div className="progress">
                       <div
-                        className="progress-bar"
-                        role="progressBar"
-                        style={{ width: `${this.state.stats.specialAttack}%` }}
-                        aria-valuenow="25"
+                        className="progress-bar "
+                        role="progressbar"
+                        style={{
+                          width: `${this.state.stats.specialAttack}%`,
+                          backgroundColor: `#${this.state.themeColor}`
+                        }}
+                        aria-valuenow={this.state.stats.specialAttack}
                         aria-valuemin="0"
                         aria-valuemax="100"
                       >
@@ -311,14 +336,19 @@ export default class Pokemon extends Component {
                   </div>
                 </div>
                 <div className="row align-items-center">
-                  <div className="col-12 col-md-3">Défense Spéciale</div>
-                  <div className="col-12 col-md-9">
-                    <div className="progess">
+                  <div className={`col-12 col-md-${this.state.statTitleWidth}`}>
+                    Défense Spéciale
+                  </div>
+                  <div className={`col-12 col-md-${this.state.statBarWidth}`}>
+                    <div className="progress">
                       <div
-                        className="progress-bar"
-                        role="progressBar"
-                        style={{ width: `${this.state.stats.specialDefense}%` }}
-                        aria-valuenow="25"
+                        className="progress-bar "
+                        role="progressbar"
+                        style={{
+                          width: `${this.state.stats.specialDefense}%`,
+                          backgroundColor: `#${this.state.themeColor}`
+                        }}
+                        aria-valuenow={this.state.stats.specialDefense}
                         aria-valuemin="0"
                         aria-valuemax="100"
                       >
@@ -329,6 +359,107 @@ export default class Pokemon extends Component {
                 </div>
               </div>
             </div>
+            <div className="row mt-1">
+              <div className="col">
+                <p className="">{this.state.description}</p>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div className="card-body">
+            <h5 class="card-title text-center">Profil</h5>
+            <div className="row">
+              <div className="col-md-6">
+                <div className="row">
+                  <div className="col-6">
+                    <h6 className="float-right">Taille:</h6>
+                  </div>
+                  <div className="col-6">
+                    <h6 className="float-left">{this.state.height} m.</h6>
+                  </div>
+                  <div className="col-6">
+                    <h6 className="float-right">Masse:</h6>
+                  </div>
+                  <div className="col-6">
+                    <h6 className="float-left">{this.state.weight} kg</h6>
+                  </div>
+                  <div className="col-6">
+                    <h6 className="float-right">Chance de Capture:</h6>
+                  </div>
+                  <div className="col-6">
+                    <h6 className="float-left">{this.state.catchRate}%</h6>
+                  </div>
+                  <div className="col-6">
+                    <h6 className="float-right">Ratio par sexe:</h6>
+                  </div>
+                  <div className="col-6">
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        style={{
+                          width: `${this.state.genderRatioFemale}%`,
+                          backgroundColor: "#c2185b"
+                        }}
+                        aria-valuenow="15"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <small>{this.state.genderRatioFemale}</small>
+                      </div>
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        style={{
+                          width: `${this.state.genderRatioMale}%`,
+                          backgroundColor: "#1976d2"
+                        }}
+                        aria-valuenow="30"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <small>{this.state.genderRatioMale}</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-6">
+                <div className="row">
+                  <div className="col-6">
+                    <h6 className="float-right">Egg Groups:</h6>
+                  </div>
+                  <div className="col-6">
+                    <h6 className="float-left">{this.state.eggGroups} </h6>
+                  </div>
+                  <div className="col-6">
+                    <h6 className="float-right">Nombre de pas pour éclore:</h6>
+                  </div>
+                  <div className="col-6">
+                    <h6 className="float-left">{this.state.hatchSteps}</h6>
+                  </div>
+                  <div className="col-6">
+                    <h6 className="float-right">Abilités:</h6>
+                  </div>
+                  <div className="col-6">
+                    <h6 className="float-left">{this.state.abilities}</h6>
+                  </div>
+                  <div className="col-6">
+                    <h6 className="float-right">EVs:</h6>
+                  </div>
+                  <div className="col-6">
+                    <h6 className="float-left">{this.state.evs}</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer text-muted">
+            Les données proviennent de{" "}
+            <a href="https://pokeapi.co/" target="_blank" className="card-link">
+              PokeAPI.co
+            </a>
+            ©
           </div>
         </div>
       </div>
